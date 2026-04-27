@@ -15,7 +15,7 @@ import java.math.BigDecimal;
 @Table(name = "productos")
 
 public class Producto {
-    //comentario d prueba
+    //comentario de prueba
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
