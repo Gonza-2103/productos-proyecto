@@ -23,33 +23,33 @@ public class Producto {
     @Column(nullable = false, length = 100)
     private String nombre;
 
-    @Column(nullable = false)
+    @Column(nullable = false)  //Detalle sobre el producto
     private String descripcion;
 
-    @Column(nullable = false, length = 50)  //Nombre del artista o fabricante de la antigüedad
+    @Column(nullable = false, length = 40)  //Nombre del artista o fabricante de la antigüedad
     private String autor;
 
-    @Column(nullable = false, length = 30)  //Epoca de creación
+    @Column(nullable = false, length = 30)  //Época de creación
     private String periodo;
 
-    @Column(nullable = false, length = 50)
+    @Column(nullable = false, length = 50)  //Materiales utilizados
     private String tecnica;
 
-    @Column(nullable = false, length = 30)
+    @Column(nullable = false, length = 30)  //Medidas físicas del producto
     private String dimensiones;
 
-    @Column(nullable = false, precision = 12, scale = 2)
+    @Column(nullable = false, precision = 10, scale = 2)
     private BigDecimal precioBase;
 
-    @Column(nullable = false, length = 10)  //Pendiente, validado o rechazado
+    @Column(nullable = false, length = 10)  //Validación de autenticidad: Pendiente, validado o rechazado
     private String estadoAutenticidad;
 
-    @Column(nullable = false)
+    @Column(nullable = false)  //Enlace a la fotografía del producto
     private String urlImagen;
 
-    @Column(name = "id_categoria", nullable = false)  //Relación lógica con el microservicio 'categorías'
+    @Column(name = "id_categoria", nullable = false)  //Relación (vínculo) lógica con el microservicio 'categorías'
     private Long idCategoria;
 
-    @Column(nullable = false)
+    @Column(nullable = false)  //ID del usuario que pone la obra en subasta
     private Long idVendedor;
 }
