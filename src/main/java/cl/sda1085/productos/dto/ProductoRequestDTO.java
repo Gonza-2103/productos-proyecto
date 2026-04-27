@@ -21,11 +21,11 @@ public class ProductoRequestDTO {
     @NotBlank(message = "El nombre NO debe estar vacío.")
     private String nombre;
 
-    @NotBlank(message = "La descripción NO debe estar vacía.")
-    private String descripcion;
-
     @NotBlank(message = "El autor NO debe estar vacío.")
     private String autor;
+
+    @NotBlank(message = "La descripción NO debe estar vacía.")
+    private String descripcion;
 
     @NotBlank(message = "El período NO debe estar vacío.")
     private String periodo;

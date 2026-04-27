@@ -17,8 +17,8 @@ public class ProductoResponseDTO {
 
     private Long id;
     private String nombre;
-    private String descripcion;
     private String autor;
+    private String descripcion;
     private String periodo;
     private String tecnica;
     private String dimensiones;

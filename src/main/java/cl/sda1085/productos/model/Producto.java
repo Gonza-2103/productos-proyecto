@@ -23,11 +23,11 @@ public class Producto {
     @Column(nullable = false, length = 100)
     private String nombre;
 
-    @Column(nullable = false)  //Detalle sobre el producto
-    private String descripcion;
-
     @Column(nullable = false, length = 40)  //Nombre del artista o fabricante de la antigüedad
     private String autor;
+
+    @Column(nullable = false)  //Detalle sobre el producto
+    private String descripcion;
 
     @Column(nullable = false, length = 30)  //Época de creación
     private String periodo;
