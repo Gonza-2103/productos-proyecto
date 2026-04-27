@@ -44,7 +44,7 @@ public class Producto {
     @Column(nullable = false, length = 10)  //Validación de autenticidad: Pendiente, validado o rechazado
     private String estadoAutenticidad;
 
-    @Column(nullable = false)  //Enlace a la fotografía del producto
+    @Column(nullable = false, length = 500)  //Enlace a la fotografía del producto
     private String urlImagen;
 
     @Column(name = "id_categoria", nullable = false)  //Relación (vínculo) lógica con el microservicio 'categorías'
