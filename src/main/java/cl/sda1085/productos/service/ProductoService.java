@@ -68,5 +68,31 @@ public class ProductoService {
         return mapToDTO(productoRepository.save(producto));
     }
     //Actualizar
+    public Optional<ProductoResponseDTO> actualizar(Long id, ProductoRequestDTO dto){
+        return productoRepository.findById(id).map(disponible -> {
+            Producto producto = productoRepository
+                    .findById(dto.getIdCategoria())
+                    .orElseThrow(() -> new RuntimeException(
+                            "Categoría NO encontrada por ID: " + dto.getIdCategoria()));
+
+            disponible.setNombre(dto.getNombre());
+            disponible.setAutor(dto.getAutor());
+            disponible.setDescripcion(dto.getDescripcion());
+            disponible.setPeriodo(dto.getPeriodo());
+            disponible.setTecnica(dto.getTecnica());
+            disponible.setDimensiones(dto.getDimensiones());
+            disponible.setPrecioBase(dto.getPrecioBase());
+            disponible.setEstadoAutenticidad(dto.getEstadoAutenticidad());
+            disponible.setUrlImagen(dto.getUrlImagen());
+            disponible.setIdCategoria(dto.getIdCategoria());
+            disponible.setIdVendedor(dto.getIdVendedor());
+
+            return mapToDTO(productoRepository.save(disponible));
+        });
+    }
+
     //Eliminar
+    public void eliminar(Long id){
+        productoRepository.deleteById(id);
+    }
 }
