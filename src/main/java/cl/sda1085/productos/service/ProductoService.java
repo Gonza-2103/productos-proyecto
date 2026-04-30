@@ -4,9 +4,12 @@ import cl.sda1085.productos.dto.ProductoRequestDTO;
 import cl.sda1085.productos.dto.ProductoResponseDTO;
 import cl.sda1085.productos.model.Producto;
 import cl.sda1085.productos.repository.ProductoRepository;
+import jakarta.persistence.metamodel.SingularAttribute;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.jpa.domain.AbstractPersistable;
 import org.springframework.stereotype.Service;
 
+import java.io.Serializable;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -45,7 +48,7 @@ public class ProductoService {
     }
 
     //Obtener por ID
-    public Optional<ProductoResponseDTO> obtenerPorId(Long id){  //'Optional' permite contener un objeto que puede o no ser nulo
+    public Optional<ProductoResponseDTO> obtenerPorId(SingularAttribute<AbstractPersistable, Serializable> id){  //'Optional' permite contener un objeto que puede o no ser nulo
         return productoRepository.findById(id).map(this::mapToDTO);
     }
 
