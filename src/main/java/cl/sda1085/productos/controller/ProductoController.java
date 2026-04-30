@@ -17,8 +17,9 @@ import static org.springframework.data.jpa.domain.AbstractPersistable_.id;
 
 public class ProductoController {
 
-    private final ProductoService productoService;
+        private final ProductoService productoService;
 
+    //Obtener
     @GetMapping
     public ResponseEntity<ProductoResponseDTO> obtenerTodos() {
         return productoService.obtenerPorId(id)
@@ -27,12 +28,14 @@ public class ProductoController {
 
     }
 
+    //Guardar
     @PostMapping
     public ResponseEntity<ProductoResponseDTO> guardar(@Valid @RequestBody ProductoRequestDTO dto) {
         return ResponseEntity.status(HttpStatus.CREATED)
                 .body(productoService.guardar(dto));
     }
 
+    //Actualizar
     @PutMapping("/{id}")
     public ResponseEntity<ProductoResponseDTO> actualizar(
             @PathVariable Long id,
