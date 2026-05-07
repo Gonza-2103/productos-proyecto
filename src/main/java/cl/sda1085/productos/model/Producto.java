@@ -23,7 +23,7 @@ public class Producto {
     @Column(nullable = false, length = 100)
     private String nombre;
 
-    @Column(nullable = false, length = 40)  //Nombre del artista o fabricante de la antigüedad
+    @Column(nullable = false, length = 100)  //Nombre del artista o fabricante de la antigüedad
     private String autor;
 
     @Column(nullable = false)  //Detalle sobre el producto

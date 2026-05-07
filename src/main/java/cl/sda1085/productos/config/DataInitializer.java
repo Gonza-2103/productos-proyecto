@@ -14,7 +14,6 @@ import java.util.List;
 @Slf4j
 @Component
 @RequiredArgsConstructor
-
 public class DataInitializer implements CommandLineRunner {
 
     private final ProductoRepository productoRepository;
@@ -23,317 +22,297 @@ public class DataInitializer implements CommandLineRunner {
     public void run (String... args) {
 
         //Verificar si existen productos para no duplicarlos
-        if (productoRepository.count()>0) {
+        if (productoRepository.count() > 0){
             log.info("Base de datos de productos ya contiene datos. Omitiendo inicialización");
-
+            return;
         }
-
-        log.info("Iniciando la creación de productos de prueba...");
-
+        log.info("Iniciando la creación de productos de prueba para los 3 vendedores.");
 
         //Crear productos para la base de datos
-        Producto p1 = new Producto(null, "Vasija Precolombina",
-                "Cultura Mapuche",
+
+        Producto p1 = new Producto(
+                null,
+                "Vasija Precolombina",
+                "Ricardo Venegas",
                 "Vasija ceremonial utilizada en rituales",
                 "Siglo XV",
                 "Cerámica",
                 "30cm x 20cm",
-                new BigDecimal("150000"),
-                "Pendiente",
+                new BigDecimal("150000.00"),
+                "PENDIENTE",
                 "https://ejemplo.com/vasija.jpg",
-                1L,
-                100L );
+                100L,
+                1L);
 
         Producto p2 = new Producto(
                 null,
                 "Espada Medieval",
-                "Desconocido",
+                "Sofía Mondaca",
                 "Espada de combate con empuñadura de cuero",
                 "Siglo XII",
                 "Acero y cuero",
                 "90cm",
-                new BigDecimal("300000"),
-                "Validado",
+                new BigDecimal("300000.00"),
+                "VALIDADO",
                 "https://ejemplo.com/espada.jpg",
-                2L,
-                101L
-        );
+                101L,
+                2L);
 
         Producto p3 = new Producto(
                 null,
                 "Pintura Colonial",
-                "Autor Anónimo",
+                "Javier Espinoza",
                 "Retrato de época colonial",
                 "Siglo XVIII",
                 "Óleo sobre tela",
                 "60cm x 40cm",
-                new BigDecimal("500000"),
-                "Pendiente",
+                new BigDecimal("500000.00"),
+                "PENDIENTE",
                 "https://ejemplo.com/pintura.jpg",
-                3L,
-                102L);
+                102L,
+                3L);
 
         Producto p4 = new Producto(
                 null,
                 "Máscara Tribal Africana",
-                "Tribu Yoruba",
+                "Elena Soto",
                 "Máscara ceremonial utilizada en rituales espirituales",
                 "Siglo XIX",
                 "Madera tallada",
                 "50cm x 25cm",
-                new BigDecimal("220000"),
-                "Pendiente",
+                new BigDecimal("220000.00"),
+                "PENDIENTE",
                 "https://ejemplo.com/mascara.jpg",
-                1L,
-                103L
-        );
+                103L,
+                1L);
 
         Producto p5 = new Producto(
                 null,
                 "Reloj de Bolsillo Antiguo",
-                "Omega",
+                "Marcos Duarte",
                 "Reloj mecánico de bolsillo en perfecto estado",
                 "1900",
                 "Oro y vidrio",
                 "5cm diámetro",
-                new BigDecimal("400000"),
-                "Validado",
+                new BigDecimal("400000.00"),
+                "VALIDADO",
                 "https://ejemplo.com/reloj.jpg",
-                2L,
-                104L
-        );
+                104L,
+                2L);
 
         Producto p6 = new Producto(
                 null,
                 "Escultura de Mármol",
-                "Miguel Ángel (réplica)",
+                "Valeria Rojas",
                 "Réplica detallada de escultura renacentista",
                 "Siglo XVI",
                 "Mármol",
                 "70cm",
-                new BigDecimal("350000"),
-                "Pendiente",
+                new BigDecimal("350000.00"),
+                "PENDIENTE",
                 "https://ejemplo.com/escultura.jpg",
-                3L,
-                105L
-        );
+                105L,
+                3L);
 
         Producto p7 = new Producto(
                 null,
                 "Libro Antiguo",
-                "Autor Desconocido",
+                "Andrés Ibarra",
                 "Libro histórico con encuadernación original",
                 "Siglo XVIII",
                 "Papel y cuero",
                 "25cm x 15cm",
-                new BigDecimal("180000"),
-                "Pendiente",
+                new BigDecimal("180000.00"),
+                "PENDIENTE",
                 "https://ejemplo.com/libro.jpg",
-                1L,
-                106L
-        );
+                106L,
+                1L);
 
         Producto p8 = new Producto(
                 null,
                 "Moneda Romana",
-                "Imperio Romano",
+                "Lucía Navarro",
                 "Moneda de bronce con inscripciones originales",
                 "Siglo I",
                 "Bronce",
                 "3cm",
-                new BigDecimal("270000"),
-                "Validado",
+                new BigDecimal("270000.00"),
+                "VALIDADO",
                 "https://ejemplo.com/moneda.jpg",
-                2L,
-                107L
-        );
+                107L,
+                2L);
 
         Producto p9 = new Producto(
                 null,
                 "Jarrón Chino Antiguo",
-                "Dinastía Ming",
+                "Fernando Tapia",
                 "Jarrón decorativo con detalles pintados a mano",
                 "Siglo XV",
                 "Porcelana",
                 "40cm",
-                new BigDecimal("600000"),
-                "Pendiente",
+                new BigDecimal("600000.00"),
+                "PENDIENTE",
                 "https://ejemplo.com/jarron.jpg",
-                3L,
-                108L
-        );
+                108L,
+                3L);
 
         Producto p10 = new Producto(
                 null,
                 "Cámara Fotográfica Vintage",
-                "Kodak",
+                "Camila Osorio",
                 "Cámara analógica en funcionamiento",
                 "1950",
                 "Metal y plástico",
                 "15cm x 10cm",
-                new BigDecimal("210000"),
-                "Validado",
+                new BigDecimal("210000.00"),
+                "VALIDADO",
                 "https://ejemplo.com/camara.jpg",
-                2L,
-                109L
-        );
+                109L,
+                2L);
 
         Producto p11 = new Producto(
                 null,
                 "Tapiz Medieval",
-                "Taller Europeo",
+                "Gabriel Vargas",
                 "Tapiz decorativo con escenas de caza",
                 "Siglo XIV",
                 "Lana y lino",
                 "200cm x 150cm",
-                new BigDecimal("520000"),
-                "Pendiente",
+                new BigDecimal("520000.00"),
+                "PENDIENTE",
                 "https://ejemplo.com/tapiz.jpg",
-                1L,
-                110L
-        );
+                110L,
+                1L);
 
         Producto p12 = new Producto(
                 null,
                 "Anillo Victoriano",
-                "Joyero Anónimo",
+                "Martina Silva",
                 "Anillo antiguo con incrustaciones de piedras",
                 "Siglo XIX",
                 "Oro y amatista",
                 "Talla 7",
-                new BigDecimal("310000"),
-                "Validado",
+                new BigDecimal("310000.00"),
+                "VALIDADO",
                 "https://ejemplo.com/anillo.jpg",
-                2L,
-                111L
-        );
+                111L,
+                2L);
 
         Producto p13 = new Producto(
                 null,
                 "Mapa Antiguo de América",
-                "Cartógrafo Europeo",
+                "Hugo Morales",
                 "Mapa detallado previo a divisiones modernas",
                 "1700",
                 "Papel pergamino",
                 "60cm x 45cm",
-                new BigDecimal("450000"),
-                "Pendiente",
+                new BigDecimal("450000.00"),
+                "PENDIENTE",
                 "https://ejemplo.com/mapa.jpg",
-                3L,
-                112L
-        );
+                112L,
+                3L);
 
         Producto p14 = new Producto(
                 null,
                 "Armadura Samurai",
-                "Artesano Japonés",
+                "Beatriz Contreras",
                 "Armadura tradicional completa",
                 "Siglo XVII",
                 "Hierro y seda",
                 "Tamaño adulto",
-                new BigDecimal("800000"),
-                "Validado",
+                new BigDecimal("80000-000"),
+                "VALIDADO",
                 "https://ejemplo.com/armadura.jpg",
-                2L,
-                113L
-        );
+                113L,
+                2L);
 
         Producto p15 = new Producto(
                 null,
                 "Caja Musical Antigua",
-                "Francia",
+                "Óscar Pizarro",
                 "Caja musical funcional con melodía clásica",
                 "Siglo XIX",
                 "Madera y metal",
                 "20cm x 10cm",
-                new BigDecimal("260000"),
-                "Pendiente",
+                new BigDecimal("260000.00"),
+                "PENDIENTE",
                 "https://ejemplo.com/cajamusical.jpg",
-                1L,
-                114L
-        );
+                114L,
+                1L);
 
         Producto p16 = new Producto(
                 null,
                 "Lámpara de Aceite",
-                "Imperio Otomano",
+                "Natalia Fuentes",
                 "Lámpara decorativa de uso doméstico",
                 "Siglo XVIII",
                 "Bronce",
                 "25cm",
-                new BigDecimal("190000"),
-                "Pendiente",
+                new BigDecimal("190000.00"),
+                "PENDIENTE",
                 "https://ejemplo.com/lampara.jpg",
-                3L,
-                115L
-        );
+                115L,
+                3L);
 
         Producto p17 = new Producto(
                 null,
                 "Busto Romano",
-                "Escultor Desconocido",
+                "Sebastián Bravo",
                 "Escultura representando figura romana",
                 "Siglo II",
                 "Mármol",
                 "45cm",
-                new BigDecimal("670000"),
-                "Validado",
+                new BigDecimal("670000.00"),
+                "VALIDADO",
                 "https://ejemplo.com/busto.jpg",
-                2L,
-                116L
-        );
+                116L,
+                2L);
 
         Producto p18 = new Producto(
                 null,
                 "Espejo Antiguo",
-                "Italia",
+                "Daniela Méndez",
                 "Espejo con marco ornamentado",
                 "Siglo XVIII",
                 "Madera y vidrio",
                 "80cm x 50cm",
-                new BigDecimal("340000"),
-                "Pendiente",
+                new BigDecimal("340000.00"),
+                "PENDIENTE",
                 "https://ejemplo.com/espejo.jpg",
-                1L,
-                117L
-        );
+                117L,
+                1L);
 
         Producto p19 = new Producto(
                 null,
                 "Pluma Estilográfica Vintage",
-                "Montblanc",
+                "Roberto García",
                 "Pluma de colección en excelente estado",
                 "1950",
                 "Resina y metal",
                 "14cm",
-                new BigDecimal("230000"),
-                "Validado",
+                new BigDecimal("230000.00"),
+                "VALIDADO",
                 "https://ejemplo.com/pluma.jpg",
-                3L,
-                118L
-        );
+                118L,
+                3L);
 
         Producto p20 = new Producto(
                 null,
                 "Baúl Antiguo",
-                "Europa",
+                "Claudia Herrera",
                 "Baúl de viaje con herrajes originales",
                 "Siglo XIX",
                 "Madera y hierro",
                 "90cm x 50cm",
-                new BigDecimal("380000"),
-                "Pendiente",
+                new BigDecimal("380000.00"),
+                "PENDIENTE",
                 "https://ejemplo.com/baul.jpg",
-                2L,
-                119L
-        );
+                119L,
+                2L);
 
         productoRepository.saveAll(List.of(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10,
                                             p11,p12,p13,p14,p15,p16,p17,p18,p19,p20));
 
         log.info("Productos creados correctamente");
-
     }
-
-
 }

@@ -5,7 +5,6 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.reactive.function.client.WebClient;
 
 @Component
-
 public class ProductoClient {
 
     private final WebClient webClientProductos;
@@ -14,7 +13,4 @@ public class ProductoClient {
             @Value("${productos-services.url}") String urlProductos) {
 
         this.webClientProductos = WebClient.builder().baseUrl(urlProductos).build();}
-
-
-
 }
