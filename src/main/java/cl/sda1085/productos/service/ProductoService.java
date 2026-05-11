@@ -26,7 +26,12 @@ public class ProductoService {
                 producto.getNombre(),
                 producto.getAutor(),
                 producto.getDescripcion(),
+                producto.getPeriodo(),
+                producto.getTecnica(),
+                producto.getDimensiones(),
                 producto.getPrecioBase(),
+                producto.getEstadoAutenticidad(),
+                producto.getUrlImagen(),
                 producto.getIdCategoria(),
                 producto.getIdVendedor()
         );
@@ -39,7 +44,12 @@ public class ProductoService {
                 producto.getNombre(),
                 producto.getAutor(),
                 producto.getDescripcion(),
+                producto.getPeriodo(),
+                producto.getTecnica(),
+                producto.getDimensiones(),
                 producto.getPrecioBase(),
+                producto.getEstadoAutenticidad(),
+                producto.getUrlImagen(),
                 producto.getIdCategoria(),
                 producto.getIdVendedor()
         );
@@ -68,8 +78,14 @@ public class ProductoService {
 
         Producto producto = new Producto();
         producto.setNombre(dto.getNombre());
+        producto.setAutor(dto.getAutor());
         producto.setDescripcion(dto.getDescripcion());
+        producto.setPeriodo(dto.getPeriodo());
+        producto.setTecnica(dto.getTecnica());
+        producto.setDimensiones(dto.getDimensiones());
         producto.setPrecioBase(dto.getPrecioBase());
+        producto.setEstadoAutenticidad(dto.getEstadoAutenticidad());
+        producto.setUrlImagen(dto.getUrlImagen());
         producto.setIdCategoria(dto.getIdCategoria());
         producto.setIdVendedor(dto.getIdVendedor());
 
@@ -84,8 +100,14 @@ public class ProductoService {
     public Optional<ProductoResponseDTO> actualizar(Long id, ProductoRequestDTO dto){
         return productoRepository.findById(id).map(productoDisponible -> {
             productoDisponible.setNombre(dto.getNombre());
+            productoDisponible.setAutor(dto.getAutor());
             productoDisponible.setDescripcion(dto.getDescripcion());
+            productoDisponible.setPeriodo(dto.getPeriodo());
+            productoDisponible.setTecnica(dto.getTecnica());
+            productoDisponible.setDimensiones(dto.getDimensiones());
             productoDisponible.setPrecioBase(dto.getPrecioBase());
+            productoDisponible.setEstadoAutenticidad(dto.getEstadoAutenticidad());
+            productoDisponible.setUrlImagen(dto.getUrlImagen());
             productoDisponible.setIdCategoria(dto.getIdCategoria());
 
             return mapToDTO(productoRepository.save(productoDisponible));

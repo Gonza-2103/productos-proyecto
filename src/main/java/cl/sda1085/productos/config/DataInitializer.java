@@ -220,7 +220,7 @@ public class DataInitializer implements CommandLineRunner {
                 "Siglo XVII",
                 "Hierro y seda",
                 "Tamaño adulto",
-                new BigDecimal("80000-000"),
+                new BigDecimal("800000.00"),
                 "VALIDADO",
                 "https://ejemplo.com/armadura.jpg",
                 113L,

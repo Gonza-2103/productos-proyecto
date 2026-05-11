@@ -19,7 +19,12 @@ public class ProductoResponseDTO {
     private String nombre;
     private String autor;
     private String descripcion;
+    private String periodo;
+    private String tecnica;
+    private String dimensiones;
     private BigDecimal precioBase;
+    private String estadoAutenticidad;
+    private String urlImagen;
     private Long idCategoria;
     private Long idVendedor;
 }

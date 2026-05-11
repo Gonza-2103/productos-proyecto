@@ -10,7 +10,6 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 
 @RestControllerAdvice
-
 public class GlobalExceptionHandler {
 
     @ExceptionHandler(MethodArgumentNotValidException.class)
@@ -35,5 +34,3 @@ public class GlobalExceptionHandler {
         return ResponseEntity.badRequest().body(error);
     }
 }
-
-
