@@ -180,18 +180,7 @@ public class ProductoService {
                 });
     }
 
-    //Verificar duplicados de producto para un mismo vendedor
-    public boolean existeProductoDuplicado(String nombre, Long idVendedor){
-        log.info("Iniciando validación de duplicado para el producto '{}' del vendedor ID: {}", nombre, idVendedor);
 
-        boolean existe = productoRepository.existsByNombreAndIdVendedor(nombre, idVendedor);
-
-        if (existe) {
-            log.warn("Validación rechazada: El producto '{}' ya existe para el vendedor ID: {}", nombre, idVendedor);
-            throw new RuntimeException("Error: El vendedor con ID " + idVendedor + " ya tiene registrado un producto con el nombre '" + nombre + "'");
-        }
-        return existe;
-    }
 
     //Contar cuántos productos tiene un vendedor específico
     public long contarProductosDeVendedor(Long idVendedor){

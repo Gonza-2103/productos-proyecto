@@ -20,8 +20,6 @@ public interface ProductoRepository extends JpaRepository<Producto, Long> {
     //Buscar el producto más caro del catálogo
     Optional<Producto> findTopByOrderByPrecioBaseDesc();
 
-    //Verificar duplicados de producto para un mismo vendedor
-    boolean existsByNombreAndIdVendedor(String nombre, Long idVendedor);
 
     //Contar cuántos productos tiene un vendedor específico
     long countByIdVendedor(Long idVendedor);

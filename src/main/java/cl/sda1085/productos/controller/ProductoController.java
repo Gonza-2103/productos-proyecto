@@ -83,14 +83,6 @@ public class ProductoController {
         return ResponseEntity.ok(productoService.obtenerProductoMasCaro());
     }
 
-    //Verificar duplicados de producto para un mismo vendedor
-    @GetMapping("/verificar-duplicado")
-    public ResponseEntity<Boolean> verificarDuplicado(
-            @RequestParam String nombre,
-            @RequestParam Long idVendedor){
-        return ResponseEntity.ok(productoService.existeProductoDuplicado(nombre, idVendedor));
-    }
-
     //Contar cuántos productos tiene un vendedor específico
     @GetMapping("/estadisticas/vendedor/{idVendedor}/conteo")
     public ResponseEntity<Long> contaerPorVendedor(@PathVariable Long idVendedor){
