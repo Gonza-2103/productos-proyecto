@@ -20,7 +20,6 @@ public interface ProductoRepository extends JpaRepository<Producto, Long> {
     //Buscar el producto más caro del catálogo
     Optional<Producto> findTopByOrderByPrecioBaseDesc();
 
-
     //Contar cuántos productos tiene un vendedor específico
     long countByIdVendedor(Long idVendedor);
 }

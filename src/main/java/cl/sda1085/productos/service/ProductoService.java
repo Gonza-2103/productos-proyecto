@@ -68,11 +68,6 @@ public class ProductoService {
     public ProductoResponseDTO guardar(ProductoRequestDTO dto){
         log.info("Iniciando el proceso de guardado para el producto: '{}' del vendedor ID: {}", dto.getNombre(), dto.getIdVendedor());
 
-        if (productoRepository.existsByNombreAndIdVendedor(dto.getNombre(), dto.getIdVendedor())){
-            log.warn("Intento de registro duplicado rechazado: El producto '{}' ya existe para el vendedor {}", dto.getNombre(), dto.getIdVendedor());
-            throw new RuntimeException("Ya tienes un producto registrado con este nombre.");
-        }
-
         Producto producto = new Producto();
         producto.setNombre(dto.getNombre());
         producto.setAutor(dto.getAutor());
